@@ -29,6 +29,7 @@ namespace Hospital_Information_Management_System
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@ namespace Hospital_Information_Management_System
             this.btnLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lilblforgot = new System.Windows.Forms.LinkLabel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,6 +47,7 @@ namespace Hospital_Information_Management_System
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(175, 23);
             this.txtUserName.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.txtUserName, "Type user NIC here");
             // 
             // txtPassword
             // 
@@ -52,6 +55,7 @@ namespace Hospital_Information_Management_System
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(175, 23);
             this.txtPassword.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtPassword, "Type your password here");
             // 
             // label1
             // 
@@ -78,6 +82,7 @@ namespace Hospital_Information_Management_System
             this.btnLogin.Size = new System.Drawing.Size(175, 53);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
+            this.toolTip1.SetToolTip(this.btnLogin, "Click here to login");
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -100,6 +105,7 @@ namespace Hospital_Information_Management_System
             this.lilblforgot.TabIndex = 6;
             this.lilblforgot.TabStop = true;
             this.lilblforgot.Text = "forgotten password?";
+            this.toolTip1.SetToolTip(this.lilblforgot, "click here to reset your password");
             // 
             // Login
             // 
@@ -136,6 +142,7 @@ namespace Hospital_Information_Management_System
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel lilblforgot;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
