@@ -19,7 +19,7 @@ namespace Hospital_Information_Management_System
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Test!");
+            MessageBox.Show("GITHUB Test");
             //comment
         }
     }
