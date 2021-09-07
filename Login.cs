@@ -20,6 +20,7 @@ namespace Hospital_Information_Management_System
         private void btnLogin_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Test!");
+            //comment
         }
     }
 }
