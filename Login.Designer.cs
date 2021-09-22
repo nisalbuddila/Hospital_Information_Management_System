@@ -34,10 +34,10 @@ namespace Hospital_Information_Management_System
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lilblforgot = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnLogin = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,17 +75,6 @@ namespace Hospital_Information_Management_System
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(30, 331);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(175, 53);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "Login";
-            this.toolTip1.SetToolTip(this.btnLogin, "Click here to login");
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::Hospital_Information_Management_System.Properties.Resources.avatar_default_icon32;
@@ -107,15 +96,34 @@ namespace Hospital_Information_Management_System
             this.lilblforgot.Text = "forgotten password?";
             this.toolTip1.SetToolTip(this.lilblforgot, "click here to reset your password");
             // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.Indigo;
+            this.btnLogin.BackgroundColor = System.Drawing.Color.Indigo;
+            this.btnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnLogin.BorderRadius = 10;
+            this.btnLogin.BorderSize = 0;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(30, 320);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(175, 52);
+            this.btnLogin.TabIndex = 7;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.TextColor = System.Drawing.Color.White;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.rjButton1_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(239, 415);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lilblforgot);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
@@ -139,10 +147,10 @@ namespace Hospital_Information_Management_System
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel lilblforgot;
         private System.Windows.Forms.ToolTip toolTip1;
+        private CustomControls.RJControls.RJButton btnLogin;
     }
 }
 
