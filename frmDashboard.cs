@@ -34,5 +34,11 @@ namespace Hospital_Information_Management_System
         {
 
         }
+
+        private void rjButton5_Click(object sender, EventArgs e)
+        {
+            frmRegister registerfrm = new frmRegister();
+            registerfrm.Show();
+        }
     }
 }

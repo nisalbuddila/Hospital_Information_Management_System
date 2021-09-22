@@ -116,6 +116,7 @@ namespace Hospital_Information_Management_System
             this.rjButton5.Text = "Add New User";
             this.rjButton5.TextColor = System.Drawing.Color.White;
             this.rjButton5.UseVisualStyleBackColor = false;
+            this.rjButton5.Click += new System.EventHandler(this.rjButton5_Click);
             // 
             // pictureBox1
             // 
