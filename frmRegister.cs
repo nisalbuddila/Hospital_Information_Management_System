@@ -177,7 +177,7 @@ namespace Hospital_Information_Management_System
                     MessageBox.Show("one or more field exceed the length!");
                 }
             }
-        }
+        } // Receptionist insert query & patient query under developing
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
