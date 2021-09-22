@@ -58,7 +58,7 @@ namespace Hospital_Information_Management_System
             SqlConnection SC = new SqlConnection();
             SC = cDB.connectDB();
             SC.Open();
-            //||  || cmbType.SelectedItem.ToString() == "Receptionist"
+            //cmbType.SelectedItem.ToString() == "Receptionist"
             if (cmbType.SelectedItem.ToString() == "Admin")
             {
                 try
