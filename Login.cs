@@ -99,7 +99,8 @@ namespace Hospital_Information_Management_System
         private void rjButton1_Click(object sender, EventArgs e)
         {
             //Creating object from the database connection class
-
+            String UserID = txtUserName.Text.Substring(0,1);
+            
             connectionDB cDB = new connectionDB();
             SqlConnection SC = new SqlConnection();
             SC = cDB.connectDB();
@@ -109,30 +110,103 @@ namespace Hospital_Information_Management_System
                 SC.Open();
                 if (SC.State == System.Data.ConnectionState.Open)
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT [U_ID],[NIC],[PASSWORD] FROM [HMS].[dbo].[ADMIN] WHERE U_ID ='" + txtUserName.Text + "' AND Password = '" + Password + "';", SC);
-                    SqlDataReader sddr;
-                    sddr = cmd.ExecuteReader();
-                    if (sddr.Read())
+                    if (UserID == "A" || UserID == "a")
                     {
-                        //add selected user name into session variable
-                        UName = sddr.GetValue(0).ToString();
-                        //Password = sddr.GetValue(2).ToString();
-                        //String DecryptedPassword = ;
-                        frmDashboard newDashBoard = new frmDashboard(UName);
-                        newDashBoard.Show();
-                        this.Hide();
+                        SqlCommand cmd = new SqlCommand("SELECT [U_ID],[NIC],[PASSWORD] FROM [HMS].[dbo].[ADMIN] WHERE U_ID ='" + txtUserName.Text + "' AND Password = '" + Password + "';", SC);
+                        SqlDataReader sddr;
+                        sddr = cmd.ExecuteReader();
+                        if (sddr.Read())
+                        {
+                            //add selected user name into session variable
+                            UName = sddr.GetValue(0).ToString();
+                            String SubstrinUID = UName.Substring(0, 1);
+                            //Password = sddr.GetValue(2).ToString();
+                            //String DecryptedPassword = ;
 
+                            frmDashboard newDashBoard = new frmDashboard(UName);
+                            newDashBoard.Show();
+                            this.Hide();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect Username or password", "Please Try Again!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
-                    else
+                    else if (UserID == "M" || UserID == "m")
                     {
-                        MessageBox.Show("Incorrect Username or password", "Please Try Again!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        SqlCommand cmd = new SqlCommand("SELECT [U_ID],[NIC],[PASSWORD] FROM [HMS].[dbo].[MEDICLE_OFFICER] WHERE U_ID ='" + txtUserName.Text + "' AND Password = '" + Password + "';", SC);
+                        SqlDataReader sddr;
+                        sddr = cmd.ExecuteReader();
+                        if (sddr.Read())
+                        {
+                            //add selected user name into session variable
+                            UName = sddr.GetValue(0).ToString();
+                            String SubstrinUID = UName.Substring(0, 1);
+                            //Password = sddr.GetValue(2).ToString();
+                            //String DecryptedPassword = ;
+
+                            MO newDashBoard = new MO();
+                            newDashBoard.Show();
+                            this.Hide();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect Username or password", "Please Try Again!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
+                    else if (UserID == "R" || UserID == "r")
+                    {
+                        SqlCommand cmd = new SqlCommand("SELECT [U_ID],[NIC],[PASSWORD] FROM [HMS].[dbo].[RECEPTION] WHERE U_ID ='" + txtUserName.Text + "' AND Password = '" + Password + "';", SC);
+                        SqlDataReader sddr;
+                        sddr = cmd.ExecuteReader();
+                        if (sddr.Read())
+                        {
+                            //add selected user name into session variable
+                            UName = sddr.GetValue(0).ToString();
+                            String SubstrinUID = UName.Substring(0, 1);
+                            //Password = sddr.GetValue(2).ToString();
+                            //String DecryptedPassword = ;
+
+                            frmDashboard newDashBoard = new frmDashboard(UName);
+                            newDashBoard.Show();
+                            this.Hide();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect Username or password", "Please Try Again!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else if (UserID == "P" || UserID == "p")
+                    {
+                        SqlCommand cmd = new SqlCommand("SELECT [U_ID],[NIC],[PASSWORD] FROM [HMS].[dbo].[PATIENT] WHERE U_ID ='" + txtUserName.Text + "' AND Password = '" + Password + "';", SC);
+                        SqlDataReader sddr;
+                        sddr = cmd.ExecuteReader();
+                        if (sddr.Read())
+                        {
+                            //add selected user name into session variable
+                            UName = sddr.GetValue(0).ToString();
+                            String SubstrinUID = UName.Substring(0, 1);
+                            //Password = sddr.GetValue(2).ToString();
+                            //String DecryptedPassword = ;
+
+                            MessageBox.Show("Dash Board Under Construction!");
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect Username or password", "Please Try Again!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+
+
                 }
                 else
                 {
                     MessageBox.Show("Cant connect to database!");
                 }
-
             }
             catch (Exception error)
             {
