@@ -63,9 +63,29 @@ namespace Hospital_Information_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap appointment100x100 {
+            get {
+                object obj = ResourceManager.GetObject("appointment100x100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap avatar_default_icon32 {
             get {
                 object obj = ResourceManager.GetObject("avatar-default-icon32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Complaint100x100 {
+            get {
+                object obj = ResourceManager.GetObject("Complaint100x100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
