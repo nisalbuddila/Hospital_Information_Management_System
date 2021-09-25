@@ -40,5 +40,11 @@ namespace Hospital_Information_Management_System
             frmRegister registerfrm = new frmRegister();
             registerfrm.Show();
         }
+
+        private void btnPatientView_Click(object sender, EventArgs e)
+        {
+            frmViewPatients newView = new frmViewPatients();
+            newView.Show();
+        }
     }
 }
