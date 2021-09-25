@@ -53,6 +53,7 @@ namespace Hospital_Information_Management_System
             // 
             this.txtPassword.Location = new System.Drawing.Point(30, 250);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(175, 23);
             this.txtPassword.TabIndex = 1;
             this.toolTip1.SetToolTip(this.txtPassword, "Type your password here");

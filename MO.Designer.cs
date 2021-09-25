@@ -229,7 +229,7 @@ namespace Hospital_Information_Management_System
             // 
             // btnIncompleted
             // 
-            this.btnIncompleted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnIncompleted.BackColor = System.Drawing.Color.LightCoral;
             this.btnIncompleted.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnIncompleted.Location = new System.Drawing.Point(300, 403);
             this.btnIncompleted.Name = "btnIncompleted";
@@ -240,7 +240,7 @@ namespace Hospital_Information_Management_System
             // 
             // btnCompleted
             // 
-            this.btnCompleted.BackColor = System.Drawing.Color.Lime;
+            this.btnCompleted.BackColor = System.Drawing.Color.Chartreuse;
             this.btnCompleted.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCompleted.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCompleted.ForeColor = System.Drawing.Color.Black;

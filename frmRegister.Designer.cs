@@ -59,8 +59,8 @@ namespace Hospital_Information_Management_System
             this.cmbType = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtpDOJ = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtStaffid = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblDOJ = new System.Windows.Forms.Label();
             this.lblStaffID = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@ namespace Hospital_Information_Management_System
             this.lblUID.BackColor = System.Drawing.Color.Transparent;
             this.lblUID.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblUID.Location = new System.Drawing.Point(21, 78);
+            this.lblUID.Location = new System.Drawing.Point(23, 129);
             this.lblUID.Name = "lblUID";
             this.lblUID.Size = new System.Drawing.Size(55, 17);
             this.lblUID.TabIndex = 0;
@@ -88,7 +88,7 @@ namespace Hospital_Information_Management_System
             this.lblNIC.BackColor = System.Drawing.Color.Transparent;
             this.lblNIC.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNIC.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblNIC.Location = new System.Drawing.Point(21, 125);
+            this.lblNIC.Location = new System.Drawing.Point(376, 87);
             this.lblNIC.Name = "lblNIC";
             this.lblNIC.Size = new System.Drawing.Size(33, 17);
             this.lblNIC.TabIndex = 1;
@@ -160,7 +160,7 @@ namespace Hospital_Information_Management_System
             this.lblalergy.BackColor = System.Drawing.Color.Transparent;
             this.lblalergy.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblalergy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblalergy.Location = new System.Drawing.Point(376, 78);
+            this.lblalergy.Location = new System.Drawing.Point(376, 131);
             this.lblalergy.Name = "lblalergy";
             this.lblalergy.Size = new System.Drawing.Size(104, 17);
             this.lblalergy.TabIndex = 7;
@@ -172,7 +172,7 @@ namespace Hospital_Information_Management_System
             this.lblGender.BackColor = System.Drawing.Color.Transparent;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblGender.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblGender.Location = new System.Drawing.Point(378, 125);
+            this.lblGender.Location = new System.Drawing.Point(378, 178);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(56, 17);
             this.lblGender.TabIndex = 8;
@@ -184,7 +184,7 @@ namespace Hospital_Information_Management_System
             this.lblTele.BackColor = System.Drawing.Color.Transparent;
             this.lblTele.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTele.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTele.Location = new System.Drawing.Point(376, 178);
+            this.lblTele.Location = new System.Drawing.Point(376, 231);
             this.lblTele.Name = "lblTele";
             this.lblTele.Size = new System.Drawing.Size(73, 17);
             this.lblTele.TabIndex = 9;
@@ -196,7 +196,7 @@ namespace Hospital_Information_Management_System
             this.lblPass.BackColor = System.Drawing.Color.Transparent;
             this.lblPass.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPass.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPass.Location = new System.Drawing.Point(378, 222);
+            this.lblPass.Location = new System.Drawing.Point(378, 275);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(69, 17);
             this.lblPass.TabIndex = 10;
@@ -208,7 +208,7 @@ namespace Hospital_Information_Management_System
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPassword.Location = new System.Drawing.Point(376, 273);
+            this.lblPassword.Location = new System.Drawing.Point(376, 326);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(115, 17);
             this.lblPassword.TabIndex = 11;
@@ -220,7 +220,7 @@ namespace Hospital_Information_Management_System
             this.lblDoc.BackColor = System.Drawing.Color.Transparent;
             this.lblDoc.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblDoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblDoc.Location = new System.Drawing.Point(378, 326);
+            this.lblDoc.Location = new System.Drawing.Point(376, 370);
             this.lblDoc.Name = "lblDoc";
             this.lblDoc.Size = new System.Drawing.Size(122, 17);
             this.lblDoc.TabIndex = 12;
@@ -228,14 +228,14 @@ namespace Hospital_Information_Management_System
             // 
             // txtUID
             // 
-            this.txtUID.Location = new System.Drawing.Point(124, 75);
+            this.txtUID.Location = new System.Drawing.Point(126, 126);
             this.txtUID.Name = "txtUID";
             this.txtUID.Size = new System.Drawing.Size(200, 23);
             this.txtUID.TabIndex = 13;
             // 
             // txtNIC
             // 
-            this.txtNIC.Location = new System.Drawing.Point(124, 125);
+            this.txtNIC.Location = new System.Drawing.Point(505, 84);
             this.txtNIC.Name = "txtNIC";
             this.txtNIC.Size = new System.Drawing.Size(200, 23);
             this.txtNIC.TabIndex = 14;
@@ -256,7 +256,7 @@ namespace Hospital_Information_Management_System
             // 
             // txtAlergy
             // 
-            this.txtAlergy.Location = new System.Drawing.Point(505, 75);
+            this.txtAlergy.Location = new System.Drawing.Point(505, 128);
             this.txtAlergy.Name = "txtAlergy";
             this.txtAlergy.Size = new System.Drawing.Size(200, 23);
             this.txtAlergy.TabIndex = 17;
@@ -268,7 +268,7 @@ namespace Hospital_Information_Management_System
             "Male",
             "Female",
             "Other"});
-            this.cmbGender.Location = new System.Drawing.Point(505, 125);
+            this.cmbGender.Location = new System.Drawing.Point(505, 178);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(200, 23);
             this.cmbGender.TabIndex = 18;
@@ -304,7 +304,7 @@ namespace Hospital_Information_Management_System
             // 
             // txtTele
             // 
-            this.txtTele.Location = new System.Drawing.Point(505, 175);
+            this.txtTele.Location = new System.Drawing.Point(505, 228);
             this.txtTele.Name = "txtTele";
             this.txtTele.Size = new System.Drawing.Size(200, 23);
             this.txtTele.TabIndex = 21;
@@ -318,7 +318,7 @@ namespace Hospital_Information_Management_System
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(505, 222);
+            this.txtPass.Location = new System.Drawing.Point(505, 275);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(200, 23);
             this.txtPass.TabIndex = 23;
@@ -326,7 +326,7 @@ namespace Hospital_Information_Management_System
             // 
             // txtConPass
             // 
-            this.txtConPass.Location = new System.Drawing.Point(505, 270);
+            this.txtConPass.Location = new System.Drawing.Point(505, 323);
             this.txtConPass.Name = "txtConPass";
             this.txtConPass.Size = new System.Drawing.Size(200, 23);
             this.txtConPass.TabIndex = 24;
@@ -338,7 +338,7 @@ namespace Hospital_Information_Management_System
             this.lblType.BackColor = System.Drawing.Color.Transparent;
             this.lblType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblType.Location = new System.Drawing.Point(378, 370);
+            this.lblType.Location = new System.Drawing.Point(23, 85);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(93, 17);
             this.lblType.TabIndex = 25;
@@ -352,7 +352,7 @@ namespace Hospital_Information_Management_System
             "Patient",
             "Receptionist",
             "Medical Officer"});
-            this.cmbType.Location = new System.Drawing.Point(505, 367);
+            this.cmbType.Location = new System.Drawing.Point(127, 84);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(200, 23);
             this.cmbType.TabIndex = 26;
@@ -362,8 +362,8 @@ namespace Hospital_Information_Management_System
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.dtpDOJ);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.txtStaffid);
             this.panel1.Controls.Add(this.lblEmail);
             this.panel1.Controls.Add(this.lblDOJ);
             this.panel1.Controls.Add(this.lblStaffID);
@@ -380,19 +380,19 @@ namespace Hospital_Information_Management_System
             this.dtpDOJ.Size = new System.Drawing.Size(200, 23);
             this.dtpDOJ.TabIndex = 39;
             // 
-            // textBox2
+            // txtEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(113, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 23);
-            this.textBox2.TabIndex = 38;
+            this.txtEmail.Location = new System.Drawing.Point(113, 55);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(200, 23);
+            this.txtEmail.TabIndex = 38;
             // 
-            // textBox1
+            // txtStaffid
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 23);
-            this.textBox1.TabIndex = 37;
+            this.txtStaffid.Location = new System.Drawing.Point(113, 12);
+            this.txtStaffid.Name = "txtStaffid";
+            this.txtStaffid.Size = new System.Drawing.Size(200, 23);
+            this.txtStaffid.TabIndex = 37;
             // 
             // lblEmail
             // 
@@ -556,8 +556,8 @@ namespace Hospital_Information_Management_System
         private System.Windows.Forms.ComboBox cmbType;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker dtpDOJ;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtStaffid;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblDOJ;
         private System.Windows.Forms.Label lblStaffID;
