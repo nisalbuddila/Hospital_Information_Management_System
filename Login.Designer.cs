@@ -48,6 +48,7 @@ namespace Hospital_Information_Management_System
             this.txtUserName.Size = new System.Drawing.Size(175, 23);
             this.txtUserName.TabIndex = 0;
             this.toolTip1.SetToolTip(this.txtUserName, "Type user NIC here");
+            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // txtPassword
             // 
@@ -57,6 +58,7 @@ namespace Hospital_Information_Management_System
             this.txtPassword.Size = new System.Drawing.Size(175, 23);
             this.txtPassword.TabIndex = 1;
             this.toolTip1.SetToolTip(this.txtPassword, "Type your password here");
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // label1
             // 
@@ -66,6 +68,7 @@ namespace Hospital_Information_Management_System
             this.label1.Size = new System.Drawing.Size(68, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "User Name:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -75,6 +78,7 @@ namespace Hospital_Information_Management_System
             this.label2.Size = new System.Drawing.Size(57, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox1
             // 
@@ -96,6 +100,7 @@ namespace Hospital_Information_Management_System
             this.lilblforgot.TabStop = true;
             this.lilblforgot.Text = "forgotten password?";
             this.toolTip1.SetToolTip(this.lilblforgot, "click here to reset your password");
+            this.lilblforgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lilblforgot_LinkClicked);
             // 
             // btnLogin
             // 
