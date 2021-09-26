@@ -188,7 +188,7 @@ namespace Hospital_Information_Management_System
                                 cmd.Parameters.AddWithValue("@U_ID", txtUID.Text);
                                 cmd.Parameters.AddWithValue("@NIC", txtNIC.Text);
                                 cmd.Parameters.AddWithValue("@U_Type", cmbType.Text);
-                                cmd.Parameters.AddWithValue("@Password", txtConPass.Text);
+                                cmd.Parameters.AddWithValue("@Password", txtConPass.Text = TextEncrypt());
                                 cmd.Parameters.AddWithValue("@M_Status", cmbStatus.Text);
                                 cmd.Parameters.AddWithValue("@Gender", cmbGender.Text);
                                 cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
@@ -249,7 +249,7 @@ namespace Hospital_Information_Management_System
                                 cmd.Parameters.AddWithValue("@U_ID", txtUID.Text);
                                 cmd.Parameters.AddWithValue("@NIC", txtNIC.Text);
                                 cmd.Parameters.AddWithValue("@U_Type", cmbType.Text);
-                                cmd.Parameters.AddWithValue("@Password", txtConPass.Text);
+                                cmd.Parameters.AddWithValue("@Password", txtConPass.Text = TextEncrypt());
                                 cmd.Parameters.AddWithValue("@M_Status", cmbStatus.Text);
                                 cmd.Parameters.AddWithValue("@Gender", cmbGender.Text);
                                 cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
@@ -310,7 +310,7 @@ namespace Hospital_Information_Management_System
                                 cmd.Parameters.AddWithValue("@U_ID", txtUID.Text);
                                 cmd.Parameters.AddWithValue("@NIC", txtNIC.Text);
                                 cmd.Parameters.AddWithValue("@U_Type", cmbType.Text);
-                                cmd.Parameters.AddWithValue("@Password", txtConPass.Text);
+                                cmd.Parameters.AddWithValue("@Password", txtConPass.Text = TextEncrypt());
                                 cmd.Parameters.AddWithValue("@M_Status", cmbStatus.Text);
                                 cmd.Parameters.AddWithValue("@Gender", cmbGender.Text);
                                 cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
@@ -347,6 +347,23 @@ namespace Hospital_Information_Management_System
             else
             {
                 MessageBox.Show("One or more field empty!");
+            }
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            // Confirm user wants to close
+            switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    break;
             }
         }
 

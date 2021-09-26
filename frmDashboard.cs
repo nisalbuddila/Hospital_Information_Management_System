@@ -27,7 +27,16 @@ namespace Hospital_Information_Management_System
 
         private void btnLogout_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dr = MessageBox.Show("Are you sure you want to Close! record?", "Any Unsaved Changes will be lost!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else if (dr == DialogResult.No)
+            {
+                //Nothing to do
+            }
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -45,6 +54,29 @@ namespace Hospital_Information_Management_System
         {
             frmViewPatients newView = new frmViewPatients();
             newView.Show();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            // Confirm user wants to close
+            switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing Application", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnReceptionist_Click(object sender, EventArgs e)
+        {
+            frmViewReception newReception = new frmViewReception();
+            newReception.Show();
         }
     }
 }

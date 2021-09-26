@@ -99,6 +99,7 @@ namespace Hospital_Information_Management_System
             this.btnReceptionist.Text = "View Receptionists";
             this.btnReceptionist.TextColor = System.Drawing.Color.White;
             this.btnReceptionist.UseVisualStyleBackColor = false;
+            this.btnReceptionist.Click += new System.EventHandler(this.btnReceptionist_Click);
             // 
             // btnPatientView
             // 

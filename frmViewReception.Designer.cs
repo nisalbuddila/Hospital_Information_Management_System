@@ -1,7 +1,7 @@
 ﻿
 namespace Hospital_Information_Management_System
 {
-    partial class frmViewPatients
+    partial class frmViewReception
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,8 @@ namespace Hospital_Information_Management_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmViewPatients));
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmViewReception));
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtConPass = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDelete = new CustomControls.RJControls.RJButton();
@@ -42,10 +42,8 @@ namespace Hospital_Information_Management_System
             this.txtPass = new System.Windows.Forms.TextBox();
             this.dtpBdate = new System.Windows.Forms.DateTimePicker();
             this.txtTele = new System.Windows.Forms.TextBox();
-            this.cmbBlood = new System.Windows.Forms.ComboBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.cmbGender = new System.Windows.Forms.ComboBox();
-            this.txtAlergy = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtFName = new System.Windows.Forms.TextBox();
             this.txtNIC = new System.Windows.Forms.TextBox();
@@ -53,62 +51,36 @@ namespace Hospital_Information_Management_System
             this.lblPass = new System.Windows.Forms.Label();
             this.lblTele = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
-            this.lblalergy = new System.Windows.Forms.Label();
-            this.lblBlood = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblDOB = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblNIC = new System.Windows.Forms.Label();
             this.lblUID = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtStaffid = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblStaffID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // dataGridView1
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.txtConPass);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnDelete);
-            this.panel1.Controls.Add(this.btnClear);
-            this.panel1.Controls.Add(this.btnUpdate);
-            this.panel1.Controls.Add(this.btnEdit);
-            this.panel1.Controls.Add(this.cmbActive);
-            this.panel1.Controls.Add(this.txtActiveS);
-            this.panel1.Controls.Add(this.txtPass);
-            this.panel1.Controls.Add(this.dtpBdate);
-            this.panel1.Controls.Add(this.txtTele);
-            this.panel1.Controls.Add(this.cmbBlood);
-            this.panel1.Controls.Add(this.cmbStatus);
-            this.panel1.Controls.Add(this.cmbGender);
-            this.panel1.Controls.Add(this.txtAlergy);
-            this.panel1.Controls.Add(this.txtAddress);
-            this.panel1.Controls.Add(this.txtFName);
-            this.panel1.Controls.Add(this.txtNIC);
-            this.panel1.Controls.Add(this.txtUID);
-            this.panel1.Controls.Add(this.lblPass);
-            this.panel1.Controls.Add(this.lblTele);
-            this.panel1.Controls.Add(this.lblGender);
-            this.panel1.Controls.Add(this.lblalergy);
-            this.panel1.Controls.Add(this.lblBlood);
-            this.panel1.Controls.Add(this.lblStatus);
-            this.panel1.Controls.Add(this.lblDOB);
-            this.panel1.Controls.Add(this.lblAddress);
-            this.panel1.Controls.Add(this.lblName);
-            this.panel1.Controls.Add(this.lblNIC);
-            this.panel1.Controls.Add(this.lblUID);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(370, 702);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(370, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(527, 699);
+            this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // txtConPass
             // 
-            this.txtConPass.Location = new System.Drawing.Point(159, 587);
+            this.txtConPass.Location = new System.Drawing.Point(159, 562);
             this.txtConPass.Name = "txtConPass";
             this.txtConPass.Size = new System.Drawing.Size(200, 23);
             this.txtConPass.TabIndex = 53;
@@ -120,7 +92,7 @@ namespace Hospital_Information_Management_System
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(32, 587);
+            this.label1.Location = new System.Drawing.Point(30, 563);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 17);
             this.label1.TabIndex = 52;
@@ -143,7 +115,6 @@ namespace Hospital_Information_Management_System
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextColor = System.Drawing.Color.DimGray;
             this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
@@ -162,7 +133,6 @@ namespace Hospital_Information_Management_System
             this.btnClear.Text = "Clear";
             this.btnClear.TextColor = System.Drawing.Color.DimGray;
             this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnUpdate
             // 
@@ -208,7 +178,7 @@ namespace Hospital_Information_Management_System
             this.cmbActive.Items.AddRange(new object[] {
             "Active",
             "Deactive"});
-            this.cmbActive.Location = new System.Drawing.Point(161, 632);
+            this.cmbActive.Location = new System.Drawing.Point(159, 608);
             this.cmbActive.Name = "cmbActive";
             this.cmbActive.Size = new System.Drawing.Size(121, 23);
             this.cmbActive.TabIndex = 47;
@@ -219,7 +189,7 @@ namespace Hospital_Information_Management_System
             this.txtActiveS.BackColor = System.Drawing.Color.Transparent;
             this.txtActiveS.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtActiveS.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtActiveS.Location = new System.Drawing.Point(34, 632);
+            this.txtActiveS.Location = new System.Drawing.Point(32, 608);
             this.txtActiveS.Name = "txtActiveS";
             this.txtActiveS.Size = new System.Drawing.Size(90, 17);
             this.txtActiveS.TabIndex = 46;
@@ -227,7 +197,7 @@ namespace Hospital_Information_Management_System
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(161, 541);
+            this.txtPass.Location = new System.Drawing.Point(161, 516);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(200, 23);
             this.txtPass.TabIndex = 45;
@@ -242,27 +212,10 @@ namespace Hospital_Information_Management_System
             // 
             // txtTele
             // 
-            this.txtTele.Location = new System.Drawing.Point(161, 494);
+            this.txtTele.Location = new System.Drawing.Point(161, 473);
             this.txtTele.Name = "txtTele";
             this.txtTele.Size = new System.Drawing.Size(200, 23);
             this.txtTele.TabIndex = 43;
-            // 
-            // cmbBlood
-            // 
-            this.cmbBlood.FormattingEnabled = true;
-            this.cmbBlood.Items.AddRange(new object[] {
-            "O+",
-            "O-",
-            "A+",
-            "A-",
-            "B+",
-            "B-",
-            "AB+",
-            "Ab-"});
-            this.cmbBlood.Location = new System.Drawing.Point(159, 293);
-            this.cmbBlood.Name = "cmbBlood";
-            this.cmbBlood.Size = new System.Drawing.Size(121, 23);
-            this.cmbBlood.TabIndex = 42;
             // 
             // cmbStatus
             // 
@@ -271,7 +224,7 @@ namespace Hospital_Information_Management_System
             "Single",
             "Married",
             "Divorced"});
-            this.cmbStatus.Location = new System.Drawing.Point(159, 249);
+            this.cmbStatus.Location = new System.Drawing.Point(157, 252);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(121, 23);
             this.cmbStatus.TabIndex = 41;
@@ -283,17 +236,10 @@ namespace Hospital_Information_Management_System
             "Male",
             "Female",
             "Other"});
-            this.cmbGender.Location = new System.Drawing.Point(161, 444);
+            this.cmbGender.Location = new System.Drawing.Point(161, 428);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(200, 23);
             this.cmbGender.TabIndex = 40;
-            // 
-            // txtAlergy
-            // 
-            this.txtAlergy.Location = new System.Drawing.Point(161, 394);
-            this.txtAlergy.Name = "txtAlergy";
-            this.txtAlergy.Size = new System.Drawing.Size(200, 23);
-            this.txtAlergy.TabIndex = 39;
             // 
             // txtAddress
             // 
@@ -311,7 +257,7 @@ namespace Hospital_Information_Management_System
             // 
             // txtNIC
             // 
-            this.txtNIC.Location = new System.Drawing.Point(161, 350);
+            this.txtNIC.Location = new System.Drawing.Point(159, 383);
             this.txtNIC.Name = "txtNIC";
             this.txtNIC.Size = new System.Drawing.Size(200, 23);
             this.txtNIC.TabIndex = 36;
@@ -329,7 +275,7 @@ namespace Hospital_Information_Management_System
             this.lblPass.BackColor = System.Drawing.Color.Transparent;
             this.lblPass.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPass.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPass.Location = new System.Drawing.Point(34, 541);
+            this.lblPass.Location = new System.Drawing.Point(32, 517);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(69, 17);
             this.lblPass.TabIndex = 34;
@@ -341,7 +287,7 @@ namespace Hospital_Information_Management_System
             this.lblTele.BackColor = System.Drawing.Color.Transparent;
             this.lblTele.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTele.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTele.Location = new System.Drawing.Point(32, 497);
+            this.lblTele.Location = new System.Drawing.Point(29, 479);
             this.lblTele.Name = "lblTele";
             this.lblTele.Size = new System.Drawing.Size(73, 17);
             this.lblTele.TabIndex = 33;
@@ -353,35 +299,11 @@ namespace Hospital_Information_Management_System
             this.lblGender.BackColor = System.Drawing.Color.Transparent;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblGender.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblGender.Location = new System.Drawing.Point(34, 444);
+            this.lblGender.Location = new System.Drawing.Point(29, 429);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(56, 17);
             this.lblGender.TabIndex = 32;
             this.lblGender.Text = "Gender:";
-            // 
-            // lblalergy
-            // 
-            this.lblalergy.AutoSize = true;
-            this.lblalergy.BackColor = System.Drawing.Color.Transparent;
-            this.lblalergy.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblalergy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblalergy.Location = new System.Drawing.Point(32, 397);
-            this.lblalergy.Name = "lblalergy";
-            this.lblalergy.Size = new System.Drawing.Size(104, 17);
-            this.lblalergy.TabIndex = 31;
-            this.lblalergy.Text = "Alergies [if any]:";
-            // 
-            // lblBlood
-            // 
-            this.lblBlood.AutoSize = true;
-            this.lblBlood.BackColor = System.Drawing.Color.Transparent;
-            this.lblBlood.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblBlood.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblBlood.Location = new System.Drawing.Point(32, 304);
-            this.lblBlood.Name = "lblBlood";
-            this.lblBlood.Size = new System.Drawing.Size(88, 17);
-            this.lblBlood.TabIndex = 30;
-            this.lblBlood.Text = "Blood Group:";
             // 
             // lblStatus
             // 
@@ -389,7 +311,7 @@ namespace Hospital_Information_Management_System
             this.lblStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblStatus.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblStatus.Location = new System.Drawing.Point(32, 260);
+            this.lblStatus.Location = new System.Drawing.Point(30, 253);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(95, 17);
             this.lblStatus.TabIndex = 29;
@@ -437,7 +359,7 @@ namespace Hospital_Information_Management_System
             this.lblNIC.BackColor = System.Drawing.Color.Transparent;
             this.lblNIC.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNIC.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblNIC.Location = new System.Drawing.Point(32, 353);
+            this.lblNIC.Location = new System.Drawing.Point(30, 386);
             this.lblNIC.Name = "lblNIC";
             this.lblNIC.Size = new System.Drawing.Size(33, 17);
             this.lblNIC.TabIndex = 25;
@@ -455,46 +377,117 @@ namespace Hospital_Information_Management_System
             this.lblUID.TabIndex = 24;
             this.lblUID.Text = "User ID:";
             // 
-            // dataGridView1
+            // panel1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(370, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(637, 702);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.txtStaffid);
+            this.panel1.Controls.Add(this.lblEmail);
+            this.panel1.Controls.Add(this.lblStaffID);
+            this.panel1.Controls.Add(this.txtConPass);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnClear);
+            this.panel1.Controls.Add(this.btnUpdate);
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Controls.Add(this.cmbActive);
+            this.panel1.Controls.Add(this.txtActiveS);
+            this.panel1.Controls.Add(this.txtPass);
+            this.panel1.Controls.Add(this.dtpBdate);
+            this.panel1.Controls.Add(this.txtTele);
+            this.panel1.Controls.Add(this.cmbStatus);
+            this.panel1.Controls.Add(this.cmbGender);
+            this.panel1.Controls.Add(this.txtAddress);
+            this.panel1.Controls.Add(this.txtFName);
+            this.panel1.Controls.Add(this.txtNIC);
+            this.panel1.Controls.Add(this.txtUID);
+            this.panel1.Controls.Add(this.lblPass);
+            this.panel1.Controls.Add(this.lblTele);
+            this.panel1.Controls.Add(this.lblGender);
+            this.panel1.Controls.Add(this.lblStatus);
+            this.panel1.Controls.Add(this.lblDOB);
+            this.panel1.Controls.Add(this.lblAddress);
+            this.panel1.Controls.Add(this.lblName);
+            this.panel1.Controls.Add(this.lblNIC);
+            this.panel1.Controls.Add(this.lblUID);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(370, 699);
+            this.panel1.TabIndex = 2;
             // 
-            // frmViewPatients
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(159, 337);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(200, 23);
+            this.txtEmail.TabIndex = 57;
+            // 
+            // txtStaffid
+            // 
+            this.txtStaffid.Location = new System.Drawing.Point(159, 295);
+            this.txtStaffid.Name = "txtStaffid";
+            this.txtStaffid.Size = new System.Drawing.Size(200, 23);
+            this.txtStaffid.TabIndex = 56;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEmail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblEmail.Location = new System.Drawing.Point(32, 338);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(42, 17);
+            this.lblEmail.TabIndex = 55;
+            this.lblEmail.Text = "Email:";
+            // 
+            // lblStaffID
+            // 
+            this.lblStaffID.AutoSize = true;
+            this.lblStaffID.BackColor = System.Drawing.Color.Transparent;
+            this.lblStaffID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblStaffID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblStaffID.Location = new System.Drawing.Point(32, 295);
+            this.lblStaffID.Name = "lblStaffID";
+            this.lblStaffID.Size = new System.Drawing.Size(53, 17);
+            this.lblStaffID.TabIndex = 54;
+            this.lblStaffID.Text = "Staff ID:";
+            // 
+            // frmViewReception
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 702);
+            this.ClientSize = new System.Drawing.Size(897, 699);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Name = "frmViewPatients";
+            this.Name = "frmViewReception";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmViewPatients";
+            this.Text = "frmViewReception";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtConPass;
+        private System.Windows.Forms.Label label1;
+        private CustomControls.RJControls.RJButton btnDelete;
+        private CustomControls.RJControls.RJButton btnClear;
+        private CustomControls.RJControls.RJButton btnUpdate;
+        private CustomControls.RJControls.RJButton btnEdit;
+        private System.Windows.Forms.ComboBox cmbActive;
+        private System.Windows.Forms.Label txtActiveS;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.DateTimePicker dtpBdate;
         private System.Windows.Forms.TextBox txtTele;
-        private System.Windows.Forms.ComboBox cmbBlood;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.ComboBox cmbGender;
-        private System.Windows.Forms.TextBox txtAlergy;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtFName;
         private System.Windows.Forms.TextBox txtNIC;
@@ -502,22 +495,16 @@ namespace Hospital_Information_Management_System
         private System.Windows.Forms.Label lblPass;
         private System.Windows.Forms.Label lblTele;
         private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.Label lblalergy;
-        private System.Windows.Forms.Label lblBlood;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblDOB;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblNIC;
         private System.Windows.Forms.Label lblUID;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox cmbActive;
-        private System.Windows.Forms.Label txtActiveS;
-        private CustomControls.RJControls.RJButton btnDelete;
-        private CustomControls.RJControls.RJButton btnClear;
-        private CustomControls.RJControls.RJButton btnUpdate;
-        private CustomControls.RJControls.RJButton btnEdit;
-        private System.Windows.Forms.TextBox txtConPass;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtStaffid;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblStaffID;
     }
 }
