@@ -10,7 +10,7 @@ namespace Hospital_Information_Management_System
     {
         public SqlConnection connectDB()
         {
-            string server = "";
+            string server = "DESKTOP-Q5QGIVL";
             string database = "HIMS";
             string uid = "";
             string password = "";
