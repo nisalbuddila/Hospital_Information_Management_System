@@ -18,7 +18,7 @@ namespace Hospital_Information_Management_System
         SqlCommand cmd;
         CryptoLab_BLL _cryptoLab_Bll = new CryptoLab_BLL();
 
-        public frmRegister()
+        public frmRegister(String sessionUser)
         {
             InitializeComponent();
             panel1.Hide();

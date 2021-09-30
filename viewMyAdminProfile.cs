@@ -5,55 +5,73 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using System.Data.Sql;
-using System.Data.SqlClient;
 using encryptDecrypt.BLL;
 using encryptDecrypt.Model;
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 namespace Hospital_Information_Management_System
 {
-    public partial class frmViewReception : Form
+    public partial class viewMyAdminProfile : Form
     {
         SqlCommand cmd;
         String UID;
+        String username;
         CryptoLab_BLL _cryptoLab_Bll = new CryptoLab_BLL();
-        public frmViewReception()
+
+        public viewMyAdminProfile(String sessionUser)
         {
             InitializeComponent();
+            username = sessionUser;
             DisplayData();
             disableFields();
-
         }
 
+        private void DisplayData() {
 
-        private void DisplayData()
-        {
             connectionDB cDB = new connectionDB();
             SqlConnection SC = new SqlConnection();
             SC = cDB.connectDB();
             SC.Open();
+            if (SC.State == System.Data.ConnectionState.Open)
+            {
+                SqlCommand cmd = new SqlCommand("select * from [HMS].[dbo].[ADMIN] WHERE U_ID='" + username + "';", SC);
+                SqlDataReader sddr;
+                sddr = cmd.ExecuteReader();
+                if (sddr.Read())
+                {
+                    txtUID.Text = sddr.GetValue(0).ToString();
+                    txtNIC.Text = sddr.GetValue(1).ToString();
+                    txtFName.Text = sddr.GetValue(2).ToString();
+                    txtAddress.Text = sddr.GetValue(3).ToString();
+                    dtpBdate.Text = sddr.GetValue(4).ToString();
+                    cmbStatus.Text = sddr.GetValue(6).ToString();
+                    txtPass.Text = sddr.GetValue(7).ToString();
+                    txtTele.Text = sddr.GetValue(8).ToString();
+                    cmbGender.Text = sddr.GetValue(9).ToString();
 
 
-            SqlDataAdapter adapt;
-            DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("select * from [HMS].[dbo].[RECEPTION]", SC);
-            adapt.Fill(dt);
-            dataGridView1.DataSource = dt;
-            SC.Close();
-            // btnSave.Enabled = false;
-            // btnUpdate.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Error Loading Data", "Please Try Again!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Can't connect to Database", "Please Try Again!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void disableFields()
         {
             txtAddress.Enabled = false;
-            txtStaffid.Enabled = false;
             txtFName.Enabled = false;
             txtNIC.Enabled = false;
             txtPass.Enabled = false;
             txtTele.Enabled = false;
             txtUID.Enabled = false;
-            txtEmail.Enabled = false;
             cmbGender.Enabled = false;
             cmbStatus.Enabled = false;
             cmbActive.Enabled = false;
@@ -63,64 +81,68 @@ namespace Hospital_Information_Management_System
         private void enableFields()
         {
             txtAddress.Enabled = true;
-            txtStaffid.Enabled = true;
             txtFName.Enabled = true;
             txtNIC.Enabled = true;
             txtPass.Enabled = true;
             txtTele.Enabled = true;
-            // txtUID.Enabled = true;
-            txtEmail.Enabled = true;
+            //txtUID.Enabled = true;
             cmbGender.Enabled = true;
             cmbStatus.Enabled = true;
             cmbActive.Enabled = true;
             dtpBdate.Enabled = true;
         }
 
-            //Encrypting the password
-            public string TextEncrypt()
+        //Encrypting the password
+        public string TextEncrypt()
+        {
+            try
             {
-                try
+                CryptoLab _cryptoLab = new CryptoLab();
+
+                if (string.IsNullOrEmpty(txtConPass.Text))
+
                 {
-                    CryptoLab _cryptoLab = new CryptoLab();
-
-                    if (string.IsNullOrEmpty(txtConPass.Text))
-
-                    {
-                        _cryptoLab.encryptText = "N/A";
-                    }
-                    else
-                    {
-                        _cryptoLab.encryptText = txtConPass.Text.Trim();
-                    }
-
-                    _cryptoLab.method = "TripleDES";
-
-                    return _cryptoLab_Bll.EncryptText(_cryptoLab);
+                    _cryptoLab.encryptText = "N/A";
                 }
-                catch (Exception)
+                else
                 {
-                    throw;
+                    _cryptoLab.encryptText = txtConPass.Text.Trim();
                 }
+
+                _cryptoLab.method = "TripleDES";
+
+                return _cryptoLab_Bll.EncryptText(_cryptoLab);
             }
-          
-        
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         public void clearData()
         {
             txtAddress.Clear();
-            txtEmail.Clear();
             txtConPass.Clear();
             txtFName.Clear();
             txtNIC.Clear();
             txtPass.Clear();
             txtTele.Clear();
             txtUID.Clear();
-            txtStaffid.Clear();
             txtActiveS.Text = "--Select an Option--";
             cmbGender.Text = "--Select an Option--";
             cmbStatus.Text = "--Select an Option--";
 
 
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            enableFields();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -132,7 +154,7 @@ namespace Hospital_Information_Management_System
             if (txtFName.Text != "" && txtUID.Text != "" && txtPass.Text == txtConPass.Text)
             {
 
-                cmd = new SqlCommand("update  [HMS].[dbo].[RECEPTION] set NIC=@NIC, NAME=@Full_Name,DOB=@dob,MARITAL_STATUS=@M_Status,PASSWORD=@Password, ADDRESS=@Address,Telephone=@Tele,Gender=@Gender,STATUS=@status, STAFF_ID=@staffid, EMAIL=@email where U_ID=@U_ID", SC);
+                cmd = new SqlCommand("update  [HMS].[dbo].[ADMIN] set NIC=@NIC, NAME=@Full_Name,DOB=@dob,MARITAL_STATUS=@M_Status,PASSWORD=@Password, ADDRESS=@Address,Telephone=@Tele,Gender=@Gender where U_ID=@U_ID", SC);
                 cmd.Parameters.AddWithValue("@Full_Name", txtFName.Text);
                 cmd.Parameters.AddWithValue("@U_ID", txtUID.Text);
                 cmd.Parameters.AddWithValue("@NIC", txtNIC.Text);
@@ -143,66 +165,30 @@ namespace Hospital_Information_Management_System
                 cmd.Parameters.AddWithValue("@Tele", txtTele.Text);
                 cmd.Parameters.AddWithValue("@dob", dtpBdate.Text);
                 cmd.Parameters.AddWithValue("@status", cmbActive.Text);
-                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@staffid", txtStaffid.Text);
-                
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Record Updated Successfully");
                 SC.Close();
                 DisplayData();
-                clearData();
                 disableFields();
             }
             else
             {
-                MessageBox.Show("Please Select Record to Update");
+                MessageBox.Show("Couldn't Update the database!");
             }
-        }
-
-        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            UID = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtAddress.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtEmail.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-            txtFName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtNIC.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtPass.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
-            txtTele.Text = dataGridView1.Rows[e.RowIndex].Cells[12].Value.ToString();
-            txtUID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtStaffid.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
-            cmbGender.Text = dataGridView1.Rows[e.RowIndex].Cells[15].Value.ToString();
-            cmbStatus.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-            cmbActive.Text = dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString();
-            dtpBdate.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-            //7email
-            //9staffid
-            //14type
-
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            enableFields();
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            clearData();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (UID != "")
-            {
-                DialogResult dr = MessageBox.Show("Are you sure you want to permanently delete this '" + UID + "' record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            try { 
+                DialogResult dr = MessageBox.Show("Are you sure you want to permanently delete this '" + username + "' record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dr == DialogResult.Yes)
                 {
                     connectionDB cDB = new connectionDB();
                     SqlConnection SC = new SqlConnection();
                     SC = cDB.connectDB();
                     SC.Open();
-                    cmd = new SqlCommand("delete[HMS].[dbo].[RECEPTION] where U_ID=@id", SC);
-                    cmd.Parameters.AddWithValue("@id", UID);
+                    cmd = new SqlCommand("delete[HMS].[dbo].[ADMIN] where U_ID=@id", SC);
+                    cmd.Parameters.AddWithValue("@id", username);
                     cmd.ExecuteNonQuery();
                     SC.Close();
                     MessageBox.Show("Record Deleted Successfully!");
@@ -215,9 +201,9 @@ namespace Hospital_Information_Management_System
                     //Nothing to do
                 }
             }
-            else
+            catch(Exception error1)
             {
-                MessageBox.Show("Please Select Record to Delete");
+                MessageBox.Show("Could'nt Delete the account !"+error1);
             }
         }
     }

@@ -10,9 +10,12 @@ namespace Hospital_Information_Management_System
 {
     public partial class frmDashboard : Form
     {
+        string username;
         public frmDashboard(String sessionUser)
         {
             InitializeComponent();
+            username = sessionUser;
+            lblUname.Text = username;
         }
 
         private void frmDashboard_Load(object sender, EventArgs e)
@@ -46,7 +49,7 @@ namespace Hospital_Information_Management_System
 
         private void rjButton5_Click(object sender, EventArgs e)
         {
-            frmRegister registerfrm = new frmRegister();
+            frmRegister registerfrm = new frmRegister(username);
             registerfrm.Show();
         }
 
@@ -68,6 +71,9 @@ namespace Hospital_Information_Management_System
                 case DialogResult.No:
                     e.Cancel = true;
                     break;
+                case DialogResult.Yes:
+                    Application.Exit();
+                    break;
                 default:
                     break;
             }
@@ -77,6 +83,18 @@ namespace Hospital_Information_Management_System
         {
             frmViewReception newReception = new frmViewReception();
             newReception.Show();
+        }
+
+        private void btnViewMO_Click(object sender, EventArgs e)
+        {
+            frmViewMO frmview = new frmViewMO();
+            frmview.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            viewMyAdminProfile frmview = new viewMyAdminProfile(username);
+            frmview.Show();
         }
     }
 }

@@ -31,7 +31,7 @@ namespace Hospital_Information_Management_System
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rjButton5 = new CustomControls.RJControls.RJButton();
+            this.btnViewMO = new CustomControls.RJControls.RJButton();
             this.btnReceptionist = new CustomControls.RJControls.RJButton();
             this.btnPatientView = new CustomControls.RJControls.RJButton();
             this.btnNewUser = new CustomControls.RJControls.RJButton();
@@ -50,7 +50,7 @@ namespace Hospital_Information_Management_System
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.rjButton5);
+            this.panel1.Controls.Add(this.btnViewMO);
             this.panel1.Controls.Add(this.btnReceptionist);
             this.panel1.Controls.Add(this.btnPatientView);
             this.panel1.Controls.Add(this.btnNewUser);
@@ -62,24 +62,25 @@ namespace Hospital_Information_Management_System
             this.panel1.Size = new System.Drawing.Size(202, 463);
             this.panel1.TabIndex = 0;
             // 
-            // rjButton5
+            // btnViewMO
             // 
-            this.rjButton5.BackColor = System.Drawing.Color.DarkMagenta;
-            this.rjButton5.BackgroundColor = System.Drawing.Color.DarkMagenta;
-            this.rjButton5.BorderColor = System.Drawing.Color.MediumVioletRed;
-            this.rjButton5.BorderRadius = 0;
-            this.rjButton5.BorderSize = 0;
-            this.rjButton5.FlatAppearance.BorderSize = 0;
-            this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rjButton5.ForeColor = System.Drawing.Color.White;
-            this.rjButton5.Location = new System.Drawing.Point(1, 320);
-            this.rjButton5.Name = "rjButton5";
-            this.rjButton5.Size = new System.Drawing.Size(199, 46);
-            this.rjButton5.TabIndex = 10;
-            this.rjButton5.Text = "View Receptionists";
-            this.rjButton5.TextColor = System.Drawing.Color.White;
-            this.rjButton5.UseVisualStyleBackColor = false;
+            this.btnViewMO.BackColor = System.Drawing.Color.DarkMagenta;
+            this.btnViewMO.BackgroundColor = System.Drawing.Color.DarkMagenta;
+            this.btnViewMO.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.btnViewMO.BorderRadius = 0;
+            this.btnViewMO.BorderSize = 0;
+            this.btnViewMO.FlatAppearance.BorderSize = 0;
+            this.btnViewMO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewMO.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnViewMO.ForeColor = System.Drawing.Color.White;
+            this.btnViewMO.Location = new System.Drawing.Point(1, 320);
+            this.btnViewMO.Name = "btnViewMO";
+            this.btnViewMO.Size = new System.Drawing.Size(199, 46);
+            this.btnViewMO.TabIndex = 10;
+            this.btnViewMO.Text = "View Medical Officers";
+            this.btnViewMO.TextColor = System.Drawing.Color.White;
+            this.btnViewMO.UseVisualStyleBackColor = false;
+            this.btnViewMO.Click += new System.EventHandler(this.btnViewMO_Click);
             // 
             // btnReceptionist
             // 
@@ -150,6 +151,7 @@ namespace Hospital_Information_Management_System
             this.pictureBox1.Size = new System.Drawing.Size(99, 101);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblUname
             // 
@@ -307,6 +309,6 @@ namespace Hospital_Information_Management_System
         private CustomControls.RJControls.RJButton rjButton4;
         private CustomControls.RJControls.RJButton btnLogout;
         private System.Windows.Forms.Label label1;
-        private CustomControls.RJControls.RJButton rjButton5;
+        private CustomControls.RJControls.RJButton btnViewMO;
     }
 }
