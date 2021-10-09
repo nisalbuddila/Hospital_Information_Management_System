@@ -34,95 +34,112 @@ namespace Hospital_Information_Management_System
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lilblforgot = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnLogin = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(30, 189);
+            this.txtUserName.Location = new System.Drawing.Point(34, 252);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(175, 23);
+            this.txtUserName.Size = new System.Drawing.Size(199, 27);
             this.txtUserName.TabIndex = 0;
             this.toolTip1.SetToolTip(this.txtUserName, "Type user NIC here");
+            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(30, 250);
+            this.txtPassword.Location = new System.Drawing.Point(34, 333);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(175, 23);
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(199, 27);
             this.txtPassword.TabIndex = 1;
             this.toolTip1.SetToolTip(this.txtPassword, "Type your password here");
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 171);
+            this.label1.Location = new System.Drawing.Point(34, 228);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 15);
+            this.label1.Size = new System.Drawing.Size(85, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "User Name:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 232);
+            this.label2.Location = new System.Drawing.Point(34, 309);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 15);
+            this.label2.Size = new System.Drawing.Size(70, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(30, 331);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(175, 53);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "Login";
-            this.toolTip1.SetToolTip(this.btnLogin, "Click here to login");
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Hospital_Information_Management_System.Properties.Resources.avatar_default_icon32;
-            this.pictureBox1.ErrorImage = global::Hospital_Information_Management_System.Properties.Resources.avatar_default_icon32;
-            this.pictureBox1.Location = new System.Drawing.Point(69, 41);
+            this.pictureBox1.Location = new System.Drawing.Point(79, 55);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(99, 101);
+            this.pictureBox1.Size = new System.Drawing.Size(113, 135);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
             // lilblforgot
             // 
             this.lilblforgot.AutoSize = true;
-            this.lilblforgot.Location = new System.Drawing.Point(58, 289);
+            this.lilblforgot.Location = new System.Drawing.Point(66, 385);
             this.lilblforgot.Name = "lilblforgot";
-            this.lilblforgot.Size = new System.Drawing.Size(115, 15);
+            this.lilblforgot.Size = new System.Drawing.Size(146, 20);
             this.lilblforgot.TabIndex = 6;
             this.lilblforgot.TabStop = true;
             this.lilblforgot.Text = "forgotten password?";
             this.toolTip1.SetToolTip(this.lilblforgot, "click here to reset your password");
+            this.lilblforgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lilblforgot_LinkClicked);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.Indigo;
+            this.btnLogin.BackgroundColor = System.Drawing.Color.Indigo;
+            this.btnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnLogin.BorderRadius = 10;
+            this.btnLogin.BorderSize = 0;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(34, 427);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(200, 69);
+            this.btnLogin.TabIndex = 7;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.TextColor = System.Drawing.Color.White;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.rjButton1_Click);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(239, 415);
+            this.ClientSize = new System.Drawing.Size(271, 543);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lilblforgot);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(255, 454);
-            this.MinimumSize = new System.Drawing.Size(255, 454);
+            this.MaximumSize = new System.Drawing.Size(289, 590);
+            this.MinimumSize = new System.Drawing.Size(289, 590);
             this.Name = "Login";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -139,10 +156,10 @@ namespace Hospital_Information_Management_System
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel lilblforgot;
         private System.Windows.Forms.ToolTip toolTip1;
+        private CustomControls.RJControls.RJButton btnLogin;
     }
 }
 
