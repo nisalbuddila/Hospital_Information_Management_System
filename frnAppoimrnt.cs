@@ -71,7 +71,41 @@ namespace Hospital_Information_Management_System
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            connectionDB cDB = new connectionDB();
+            SqlConnection SC = new SqlConnection();
+            SC = cDB.connectDB();
 
+            SC.Open();
+          
+            SqlCommand cmd = SC.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+
+            if (txtAID.Text != "" && dtpApp.Text != "" && dtpTime.Text != "" && cbMediOfficer.Text != "" && cmbPatient.Text != "" && txtSymptoms.Text != "")
+            {
+                cmd.CommandText = "UPDATE appoiment SET " +
+                "P_NAME=@pname,A_DATE=@date,A_TIME=@time,M_OFFICER=@mofficer," +
+                "SYMPTOMS=@symptoms WHERE APP_NO='" + txtAID.Text + "'";
+
+                cmd.Parameters.AddWithValue("@pname", cmbPatient.Text);
+                cmd.Parameters.AddWithValue("@date", Convert.ToDateTime(dtpApp.Text.Trim()));
+                cmd.Parameters.AddWithValue("@time", Convert.ToDateTime(dtpTime.Text.Trim()));
+                cmd.Parameters.AddWithValue("@mofficer",cbMediOfficer .Text);
+                cmd.Parameters.AddWithValue("@symptoms", txtSymptoms.Text);
+                
+
+                cmd.ExecuteNonQuery();
+                SC.Close();
+                SC.Dispose();
+                
+                Clear();
+                load_data();
+                MessageBox.Show("Record Update Successfully");
+
+            }
+            else
+            {
+                MessageBox.Show("Please Select Record to Update");
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -96,7 +130,7 @@ namespace Hospital_Information_Management_System
                 SC.Dispose();
 
                 Clear();
-                disp_data();
+                load_data();
                 MessageBox.Show("Record Delete Successfully");
 
 
