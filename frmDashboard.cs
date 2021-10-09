@@ -96,5 +96,17 @@ namespace Hospital_Information_Management_System
             viewMyAdminProfile frmview = new viewMyAdminProfile(username);
             frmview.Show();
         }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            frnAppoimrnt myForm = new frnAppoimrnt();
+            myForm.Show();
+        }
+
+        private void rjButton3_Click(object sender, EventArgs e)
+        {
+            Complaint myFormComplaint = new Complaint();
+            myFormComplaint.Show();
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace Hospital_Information_Management_System
 
             SqlDataAdapter adapt;
             DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("select * from [HMS].[dbo].[ADMIN] where", SC);
+            adapt = new SqlDataAdapter("select * from [HMS].[dbo].[MEDICLE_OFFICER]", SC);
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
             SC.Close();

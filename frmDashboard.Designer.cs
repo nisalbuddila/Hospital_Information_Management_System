@@ -42,7 +42,6 @@ namespace Hospital_Information_Management_System
             this.rjButton3 = new CustomControls.RJControls.RJButton();
             this.rjButton4 = new CustomControls.RJControls.RJButton();
             this.btnLogout = new CustomControls.RJControls.RJButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -180,6 +179,7 @@ namespace Hospital_Information_Management_System
             this.rjButton1.Text = "Appoinments";
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
             // 
             // rjButton2
             // 
@@ -218,6 +218,7 @@ namespace Hospital_Information_Management_System
             this.rjButton3.Text = "Complaints";
             this.rjButton3.TextColor = System.Drawing.Color.White;
             this.rjButton3.UseVisualStyleBackColor = false;
+            this.rjButton3.Click += new System.EventHandler(this.rjButton3_Click);
             // 
             // rjButton4
             // 
@@ -257,16 +258,6 @@ namespace Hospital_Information_Management_System
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click_1);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(302, 176);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 30);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "label1";
-            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -275,7 +266,6 @@ namespace Hospital_Information_Management_System
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(651, 463);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.rjButton4);
             this.Controls.Add(this.rjButton3);
@@ -291,7 +281,6 @@ namespace Hospital_Information_Management_System
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -308,7 +297,6 @@ namespace Hospital_Information_Management_System
         private CustomControls.RJControls.RJButton rjButton3;
         private CustomControls.RJControls.RJButton rjButton4;
         private CustomControls.RJControls.RJButton btnLogout;
-        private System.Windows.Forms.Label label1;
         private CustomControls.RJControls.RJButton btnViewMO;
     }
 }
