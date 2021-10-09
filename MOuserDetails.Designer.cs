@@ -31,6 +31,9 @@ namespace Hospital_Information_Management_System
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MOuserDetails));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.userImage2 = new System.Windows.Forms.PictureBox();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnPassword = new System.Windows.Forms.Button();
@@ -70,6 +73,7 @@ namespace Hospital_Information_Management_System
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userImage2)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,6 +86,40 @@ namespace Hospital_Information_Management_System
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(70)))), ((int)(((byte)(141)))));
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnEdit);
+            this.panel2.Controls.Add(this.userImage2);
+            this.panel2.Controls.Add(this.lblPersonal);
+            this.panel2.Location = new System.Drawing.Point(2, 1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(201, 610);
+            this.panel2.TabIndex = 0;
+            // 
+            // userImage2
+            // 
+            this.userImage2.Image = ((System.Drawing.Image)(resources.GetObject("userImage2.Image")));
+            this.userImage2.Location = new System.Drawing.Point(3, 81);
+            this.userImage2.Name = "userImage2";
+            this.userImage2.Size = new System.Drawing.Size(183, 178);
+            this.userImage2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.userImage2.TabIndex = 2;
+            this.userImage2.TabStop = false;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEdit.Location = new System.Drawing.Point(47, 556);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(100, 35);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
@@ -92,6 +130,7 @@ namespace Hospital_Information_Management_System
             this.panel3.Controls.Add(this.cmbMaritalState);
             this.panel3.Controls.Add(this.cmbGender);
             this.panel3.Controls.Add(this.btnUpdate);
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.txtDoj);
             this.panel3.Controls.Add(this.txtStaffEmail);
             this.panel3.Controls.Add(this.txtConfirm);
@@ -499,6 +538,8 @@ namespace Hospital_Information_Management_System
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userImage2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -511,6 +552,7 @@ namespace Hospital_Information_Management_System
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDoj;
         private System.Windows.Forms.TextBox txtStaffEmail;
         private System.Windows.Forms.TextBox txtConfirm;

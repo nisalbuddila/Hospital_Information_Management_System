@@ -102,7 +102,7 @@ namespace Hospital_Information_Management_System
                 else
                 {
                     MessageBox.Show("Can not connect to database!");
-                }
+        }
             }
             catch (Exception error)
             {
@@ -160,7 +160,7 @@ namespace Hospital_Information_Management_System
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

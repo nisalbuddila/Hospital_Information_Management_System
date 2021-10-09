@@ -30,6 +30,7 @@ namespace Hospital_Information_Management_System
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MO));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewAppointments = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -39,6 +40,12 @@ namespace Hospital_Information_Management_System
             this.userImage = new System.Windows.Forms.PictureBox();
             this.btnHome = new System.Windows.Forms.Button();
             this.lblTodayApp = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnIncompleted = new System.Windows.Forms.Button();
             this.btnCompleted = new System.Windows.Forms.Button();
@@ -46,6 +53,7 @@ namespace Hospital_Information_Management_System
             this.txtNic = new System.Windows.Forms.TextBox();
             this.txtPatient = new System.Windows.Forms.TextBox();
             this.txtAppNo = new System.Windows.Forms.TextBox();
+            this.lblAppTime = new System.Windows.Forms.Label();
             this.lblSymptoms = new System.Windows.Forms.Label();
             this.lblNic = new System.Windows.Forms.Label();
             this.lblPname = new System.Windows.Forms.Label();
@@ -56,6 +64,7 @@ namespace Hospital_Information_Management_System
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +73,7 @@ namespace Hospital_Information_Management_System
             this.panel1.Controls.Add(this.dataGridViewAppointments);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.lblTodayApp);
+            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -168,6 +178,58 @@ namespace Hospital_Information_Management_System
             this.lblTodayApp.TabIndex = 2;
             this.lblTodayApp.Text = "TODAY APPOINTMENTS";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 146);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(463, 433);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "App No";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Patient Name";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Patient NIC";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Symptoms";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "App Time";
+            this.Column5.Name = "Column5";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
@@ -177,6 +239,7 @@ namespace Hospital_Information_Management_System
             this.panel2.Controls.Add(this.txtNic);
             this.panel2.Controls.Add(this.txtPatient);
             this.panel2.Controls.Add(this.txtAppNo);
+            this.panel2.Controls.Add(this.lblAppTime);
             this.panel2.Controls.Add(this.lblSymptoms);
             this.panel2.Controls.Add(this.lblNic);
             this.panel2.Controls.Add(this.lblPname);
@@ -252,6 +315,17 @@ namespace Hospital_Information_Management_System
             this.txtAppNo.Size = new System.Drawing.Size(310, 16);
             this.txtAppNo.TabIndex = 2;
             // 
+            // lblAppTime
+            // 
+            this.lblAppTime.AutoSize = true;
+            this.lblAppTime.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblAppTime.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblAppTime.Location = new System.Drawing.Point(11, 145);
+            this.lblAppTime.Name = "lblAppTime";
+            this.lblAppTime.Size = new System.Drawing.Size(69, 17);
+            this.lblAppTime.TabIndex = 1;
+            this.lblAppTime.Text = "App. Time";
+            // 
             // lblSymptoms
             // 
             this.lblSymptoms.AutoSize = true;
@@ -323,6 +397,7 @@ namespace Hospital_Information_Management_System
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -339,16 +414,25 @@ namespace Hospital_Information_Management_System
         private System.Windows.Forms.Label lblPname;
         private System.Windows.Forms.Label lblAppNo;
         private System.Windows.Forms.Label lblVbox;
+        private System.Windows.Forms.TextBox txtAppTime;
         private System.Windows.Forms.TextBox txtNic;
         private System.Windows.Forms.TextBox txtPatient;
         private System.Windows.Forms.TextBox txtAppNo;
         private System.Windows.Forms.TextBox txtSymptoms;
         private System.Windows.Forms.Button btnIncompleted;
         private System.Windows.Forms.Button btnCompleted;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblTodayApp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label lblArea;
         private System.Windows.Forms.PictureBox userImage;
         private System.Windows.Forms.DataGridView dataGridViewAppointments;
         private System.Windows.Forms.Button btnProfile;
