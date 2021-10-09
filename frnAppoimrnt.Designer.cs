@@ -37,7 +37,6 @@ namespace Hospital_Information_Management_System
             this.txtSymptoms = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dtpApp = new System.Windows.Forms.DateTimePicker();
-            this.txtPname = new System.Windows.Forms.TextBox();
             this.cbMediOfficer = new System.Windows.Forms.ComboBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -46,6 +45,9 @@ namespace Hospital_Information_Management_System
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.dtpTime = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbPatient = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +55,7 @@ namespace Hospital_Information_Management_System
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 100);
+            this.label1.Location = new System.Drawing.Point(12, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 28);
             this.label1.TabIndex = 0;
@@ -62,7 +64,7 @@ namespace Hospital_Information_Management_System
             // txtAID
             // 
             this.txtAID.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.txtAID.Location = new System.Drawing.Point(157, 103);
+            this.txtAID.Location = new System.Drawing.Point(157, 65);
             this.txtAID.Name = "txtAID";
             this.txtAID.Size = new System.Drawing.Size(211, 23);
             this.txtAID.TabIndex = 1;
@@ -71,7 +73,7 @@ namespace Hospital_Information_Management_System
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 146);
+            this.label2.Location = new System.Drawing.Point(12, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 28);
             this.label2.TabIndex = 2;
@@ -81,7 +83,7 @@ namespace Hospital_Information_Management_System
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(12, 191);
+            this.label3.Location = new System.Drawing.Point(12, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 28);
             this.label3.TabIndex = 4;
@@ -118,18 +120,11 @@ namespace Hospital_Information_Management_System
             // dtpApp
             // 
             this.dtpApp.CalendarMonthBackground = System.Drawing.SystemColors.MenuBar;
-            this.dtpApp.Location = new System.Drawing.Point(157, 194);
+            this.dtpApp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpApp.Location = new System.Drawing.Point(157, 155);
             this.dtpApp.Name = "dtpApp";
             this.dtpApp.Size = new System.Drawing.Size(211, 23);
             this.dtpApp.TabIndex = 12;
-            // 
-            // txtPname
-            // 
-            this.txtPname.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.txtPname.Location = new System.Drawing.Point(157, 149);
-            this.txtPname.Name = "txtPname";
-            this.txtPname.Size = new System.Drawing.Size(211, 23);
-            this.txtPname.TabIndex = 3;
             // 
             // cbMediOfficer
             // 
@@ -172,7 +167,7 @@ namespace Hospital_Information_Management_System
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.txtSearch.Location = new System.Drawing.Point(434, 103);
+            this.txtSearch.Location = new System.Drawing.Point(434, 67);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(431, 23);
             this.txtSearch.TabIndex = 18;
@@ -181,20 +176,21 @@ namespace Hospital_Information_Management_System
             // 
             this.btnSearch.BackColor = System.Drawing.Color.DarkTurquoise;
             this.btnSearch.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSearch.Location = new System.Drawing.Point(894, 96);
+            this.btnSearch.Location = new System.Drawing.Point(894, 58);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(83, 32);
             this.btnSearch.TabIndex = 19;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(434, 161);
+            this.dataGridView1.Location = new System.Drawing.Point(434, 115);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(543, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(543, 251);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -203,7 +199,7 @@ namespace Hospital_Information_Management_System
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Poppins Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(12, 28);
+            this.label4.Location = new System.Drawing.Point(12, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(169, 42);
             this.label4.TabIndex = 21;
@@ -221,12 +217,50 @@ namespace Hospital_Information_Management_System
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // dtpTime
+            // 
+            this.dtpTime.CalendarMonthBackground = System.Drawing.SystemColors.MenuBar;
+            this.dtpTime.CustomFormat = "";
+            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpTime.Location = new System.Drawing.Point(157, 195);
+            this.dtpTime.Name = "dtpTime";
+            this.dtpTime.ShowUpDown = true;
+            this.dtpTime.Size = new System.Drawing.Size(211, 23);
+            this.dtpTime.TabIndex = 24;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(12, 192);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(142, 28);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Appoiment Time";
+            // 
+            // cmbPatient
+            // 
+            this.cmbPatient.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.cmbPatient.FormattingEnabled = true;
+            this.cmbPatient.Items.AddRange(new object[] {
+            "Doc Miss Piyumi ",
+            "Doc MR Nisal Buddila",
+            "Doc miss Shadi Jayathilake",
+            "Doc Mr Mihiran"});
+            this.cmbPatient.Location = new System.Drawing.Point(157, 110);
+            this.cmbPatient.Name = "cmbPatient";
+            this.cmbPatient.Size = new System.Drawing.Size(211, 23);
+            this.cmbPatient.TabIndex = 25;
+            // 
             // frnAppoimrnt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1013, 394);
+            this.Controls.Add(this.cmbPatient);
+            this.Controls.Add(this.dtpTime);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView1);
@@ -240,7 +274,6 @@ namespace Hospital_Information_Management_System
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtPname);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAID);
             this.Controls.Add(this.label1);
@@ -263,7 +296,6 @@ namespace Hospital_Information_Management_System
         private System.Windows.Forms.TextBox txtSymptoms;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtpApp;
-        private System.Windows.Forms.TextBox txtPname;
         private System.Windows.Forms.ComboBox cbMediOfficer;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
@@ -272,5 +304,8 @@ namespace Hospital_Information_Management_System
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DateTimePicker dtpTime;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbPatient;
     }
 }

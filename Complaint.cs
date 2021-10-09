@@ -46,7 +46,7 @@ namespace Hospital_Information_Management_System
             SC = cDB.connectDB();
             SC.Open();
             //cmd.CommandType = CommandType.Text;
-            cmd = new SqlCommand("Select * From COMPLAINT",SC);
+            cmd = new SqlCommand("Select NIC,PHONE_NO,date,DISCRIPTION,ACTIONTAKEN,NOTE,COMPLAINT_BY From COMPLAINT", SC);
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -97,11 +97,49 @@ namespace Hospital_Information_Management_System
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            connectionDB cDB = new connectionDB();
+            SqlConnection SC = new SqlConnection();
+            SC = cDB.connectDB();
+
+            SC.Open();
+
+            SqlCommand cmd = SC.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+
+            if (txtType.Text != "" && txtPhoneNo.Text != "" && txtDiscription.Text != "" && txtAction.Text != "" && txtNote.Text != "" && txtComplaintby.Text != "")
+            {
+                cmd.CommandText = "UPDATE complaint SET " +
+                "Com_Type=@C_Type,PHONE_NO=@PHO_No,date=@Date,DISCRIPTION=@Discription," +
+                "ACTIONTAKEN=@ActionTaken,NOTE=@Note,COMPLAINT_BY=@C_name WHERE nic='" + txtNIC.Text + "'";
+
+                cmd.Parameters.AddWithValue("@C_Type", txtType.Text);
+                cmd.Parameters.AddWithValue("@PHO_No", txtPhoneNo.Text);
+                cmd.Parameters.AddWithValue("@Date", Convert.ToDateTime(dtpDate.Text.Trim()));
+                cmd.Parameters.AddWithValue("@Discription", txtDiscription.Text);
+                cmd.Parameters.AddWithValue("@ActionTaken", txtAction.Text);
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
+                cmd.Parameters.AddWithValue("@C_name", txtComplaintby.Text);
+
+                cmd.ExecuteNonQuery();
+                SC.Close();
+                SC.Dispose();
+
+                Clear();
+                disp_data();
+                MessageBox.Show("Record Update Successfully");
+
+            }
+            else
+            {
+                MessageBox.Show("Please Select Record to Update");
+            }
+
+
+
+
             
 
-            Clear();
 
-            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -133,51 +171,7 @@ namespace Hospital_Information_Management_System
 
 
 
-            //    try
-            //    {
-            //        connectionDB cDB = new connectionDB();
-            //        SqlConnection SC = new SqlConnection();
-            //        SC = cDB.connectDB();
-            //
-            //        SC.Open();
-            //        SqlCommand cmb = con.CreateCommand();
-            //        cmd = new SqlCommand("delete tbl_Record where NIC=@nic", SC);
-            //        //SC.Open();
-            //        cmd.Parameters.AddWithValue("@nic", txtNIC);
-            //        cmd.ExecuteNonQuery();
-            //        SC.Close();
-            //        MessageBox.Show("Record Deleted Successfully!");
-            //        // DisplayData();
-            //        SC.Close();
-            //    }
-            //    catch (SqlException ex)
-            //    {
-            //        //MessageBox.Show("");
-            //        MessageBox.Show(ex.ToString(), "Please Select Record to Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-
-
-
-
-
-
-            //  if (i != 0)
-            //  {
-            //      cmd = new SqlCommand("delete tbl_Record where NIC=@nic", SC);
-            //      SC.Open();
-            //      cmd.Parameters.AddWithValue("@nic", txtNIC);
-            //      cmd.ExecuteNonQuery();
-            //      SC.Close();
-            //      MessageBox.Show("Record Deleted Successfully!");
-            //     // DisplayData();
-            //
-            //      SC.Close();
-            //
-            //  }
-            //  else
-            //  {
-            //      MessageBox.Show("Please Select Record to Delete");
-            //  }
+            
 
 
 
@@ -269,7 +263,7 @@ namespace Hospital_Information_Management_System
                 SqlCommand cmd = SC.CreateCommand();
                 cmd.CommandType = CommandType.Text;
 
-                cmd.CommandText = "select C_ID,NIC,COMPLAINT_BY,Com_Type,PHONE_No,date,Discription,NOTE,ACTIONTAKEN from complaint";
+                cmd.CommandText = "select C_ID,NIC,COMPLAINT_BY,PHONE_No,date,Discription,NOTE,ACTIONTAKEN from complaint";
                 cmd.ExecuteNonQuery();
                 SC.Close();
 
@@ -305,7 +299,7 @@ namespace Hospital_Information_Management_System
                 dataGridView1.CurrentRow.Selected = true;
                 txtNIC.Text = dataGridView1.Rows[e.RowIndex].Cells["NIC"].FormattedValue.ToString();
                 txtType.Text = dataGridView1.Rows[e.RowIndex].Cells["C_ID"].FormattedValue.ToString();
-                txtComplaintby.Text = dataGridView1.Rows[e.RowIndex].Cells["Com_Type"].FormattedValue.ToString();
+                //txtComplaintby.Text = dataGridView1.Rows[e.RowIndex].Cells["Com_Type"].FormattedValue.ToString();
                 txtPhoneNo.Text = dataGridView1.Rows[e.RowIndex].Cells["PHONE_NO"].FormattedValue.ToString();
                 dtpDate.Text = dataGridView1.Rows[e.RowIndex].Cells["date"].FormattedValue.ToString();
                 txtDiscription.Text = dataGridView1.Rows[e.RowIndex].Cells["DISCRIPTION"].FormattedValue.ToString();
