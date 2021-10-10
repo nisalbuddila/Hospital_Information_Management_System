@@ -19,14 +19,16 @@ This read me file shows how the things devided between group members.
 -Add new Patient, Receptionist, Admin (All users)
 -Update details of the all users(Admin, Patient, receptionist)
 -Database Connection Class
--Forgotten password recovery interfdace and functions
+-Forgotten password recovery interface and functions
 
 2. Shadi jayathilaka
 -Medical User interface & functions reguarding medical officer
+-Approvemnt of appoinment status and completion of appoinment functions
 
 3.Piyumi Weerasinghe
 -Complaint interface and functions
 -Appoinment interface and Functions
+-Wirefram designing
 
 4.Mihiran
 -Patient Dash Board
