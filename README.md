@@ -31,6 +31,4 @@ This read me file shows how the things devided between group members.
 -Wirefram designing
 
 4.Mihiran
--Patient Dash Board
--Patient account View
--Patient Report
+-
